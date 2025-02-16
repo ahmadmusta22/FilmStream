@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { useSelector } from 'react-redux';
+import { useLanguage } from '../Contexts/LanguageContext';
 
 export default function Login() {
+
+    const { language, toggleLanguage, t } = useLanguage();
+    const favoritesCount = useSelector((state) => state.favorites.favorites.length);
     const [showPassword, setShowPassword] = useState(false); 
 
     const validationSchema = Yup.object({
@@ -27,13 +32,13 @@ export default function Login() {
 
     return (
         <div className="container mt-5 flex-grow-1 mb-5">
-            <h2 className="text-center mb-4">Login now:</h2>
+            <h2 className="text-center mb-4">{t("Loginnow")}</h2>
 
             <form onSubmit={formik.handleSubmit}>
                
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">
-                        Email address
+                    {t("Emailaddress")}
                     </label>
                     <input
                         type="email"
@@ -61,7 +66,7 @@ export default function Login() {
                 
                 <div className="mb-3 position-relative">
                     <label htmlFor="password" className="form-label">
-                        Password
+                    {t("Password")}
                     </label>
                     <input
                         type={showPassword ? 'text' : 'password'}
@@ -96,8 +101,8 @@ export default function Login() {
                 </div>
 
                
-                <button type="submit" className="btn btn-success w-100">
-                    Submit
+                <button type="submit" className="btn btn-warning w-100">
+                {t("Submit")}
                 </button>
             </form>
         </div>

@@ -1,15 +1,18 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { initializeFavorites, removeFromFavorites } from '../redux/favoritesSlice';
-import { FaHeart } from 'react-icons/fa'; 
+import { FaHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../Contexts/LanguageContext';
 
 export default function App() {
+    const { language, toggleLanguage, t } = useLanguage();
+    const favoritesCount = useSelector((state) => state.favorites.favorites.length);
     const dispatch = useDispatch();
     const favorites = useSelector((state) => state.favorites.favorites);
 
     useEffect(() => {
-        dispatch(initializeFavorites()); 
+        dispatch(initializeFavorites());
     }, [dispatch]);
 
     const handleRemoveFavorite = (id) => {
@@ -18,12 +21,13 @@ export default function App() {
 
     return (
         <div className="container mt-4 flex-grow-1 mb-5">
-            <h2 className="mb-4">Your Favorite Movies</h2>
+            <h2 className="mb-4"> {t("YourFavoriteMovies")}</h2>
             <div className="row">
                 {favorites.length === 0 ? (
                     <div className="text-center">
-                        <h2>No Favorites Yet</h2>
+                        <h2> {t("NoFavoritesYet")}</h2>
                     </div>
+
                 ) : (
                     favorites.map((movie) => (
                         <div key={movie.id} className="col-md-3 mb-4">
@@ -56,7 +60,7 @@ export default function App() {
                                             style={{
                                                 backgroundColor:
                                                     movie.rating >= 8 ? '#28a745' :
-                                                    movie.rating >= 5 ? '#ffc107' : '#dc3545',
+                                                        movie.rating >= 5 ? '#ffc107' : '#dc3545',
                                                 color: '#1e1e1e',
                                             }}
                                         >
