@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className="container">
         <Link className="navbar-brand" to="/">FilmStream</Link>
         <button
-          className="navbar-toggler"
+          className="navbar-toggler film"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -29,7 +29,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/favorites">
-                {t("favorites")} <span className="badge bg-danger">{favoritesCount}</span>
+                {t("favorites")} <span className="badge counter-color">{favoritesCount}</span>
               </Link>
             </li>
             <li className="nav-item">

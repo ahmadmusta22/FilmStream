@@ -1,6 +1,10 @@
 import { useState } from "react";
+import { useLanguage } from "../Contexts/LanguageContext";
+import { useSelector } from "react-redux";
 
 export default function Register() {
+    const { language, toggleLanguage, t } = useLanguage();
+    const favoritesCount = useSelector((state) => state.favorites.favorites.length);
     const [userData, setUserData] = useState({
         email: "",
         name: "",
@@ -123,7 +127,7 @@ export default function Register() {
 
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">
-                        Email address
+                    {t("Emailaddress")}
                     </label>
                     <input
                         type="email"
@@ -145,7 +149,7 @@ export default function Register() {
 
                 <div className="mb-3">
                     <label htmlFor="name" className="form-label">
-                        Name
+                    {t("Name")}
                     </label>
                     <input
                         type="text"
@@ -167,7 +171,7 @@ export default function Register() {
 
                 <div className="mb-3">
                     <label htmlFor="username" className="form-label">
-                        Username
+                    {t("Username")}
                     </label>
                     <input
                         type="text"
@@ -189,7 +193,7 @@ export default function Register() {
 
                 <div className="mb-3">
                     <label htmlFor="password" className="form-label">
-                        Password
+                    {t("Password")}
                     </label>
                     <input
                         type="password"
@@ -211,7 +215,7 @@ export default function Register() {
 
                 <div className="mb-3">
                     <label htmlFor="confirmPassword" className="form-label">
-                        Confirm Password
+                    {t("ConfirmPassword")}
                     </label>
                     <input
                         type="password"
@@ -233,7 +237,7 @@ export default function Register() {
 
                 <button
                     type="submit"
-                    className="btn btn-primary"
+                    className="btn btn-warning"
                     disabled={
                         userDataErrors.emailError ||
                         userDataErrors.nameError ||
@@ -242,7 +246,7 @@ export default function Register() {
                         userDataErrors.confirmPasswordError
                     }
                 >
-                    Submit
+                    {t("Submit")}
                 </button>
             </form>
         </div>
