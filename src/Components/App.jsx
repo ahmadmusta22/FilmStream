@@ -16,7 +16,7 @@ import { LanguageProvider } from '../Contexts/LanguageContext';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import store from '../redux/store';
-import { HashRouter as Router } from 'react-router-dom';
+
 
 function App() {
   return (
