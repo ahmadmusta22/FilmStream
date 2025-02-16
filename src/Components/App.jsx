@@ -1,7 +1,7 @@
 import React from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom"; // ✅ Use HashRouter
 import { Provider } from "react-redux";
-import store from "../redux/store";
+import store from "../redux/store.js";
 import Navbar from "./Navbar";
 import Movies from "./Movies";
 import Register from "./Register";
