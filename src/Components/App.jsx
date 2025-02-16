@@ -13,6 +13,10 @@ import Notfound from "../Notfound";
 import { LanguageProvider } from "../Contexts/LanguageContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import '../index.css';
+import '../App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
