@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Updated imports
+import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
 import { Provider } from 'react-redux';
 
 import Movies from './Movies';
@@ -13,8 +13,8 @@ import Showdetails from './Showdetails';
 import Favorites from './Favorites';
 import Footer from './Footer';
 import { LanguageProvider } from '../Contexts/LanguageContext';
-import { ToastContainer } from 'react-toastify'; // Import ToastContainer
-import 'react-toastify/dist/ReactToastify.css'; // Import Toastify styles
+import { ToastContainer } from 'react-toastify'; 
+import 'react-toastify/dist/ReactToastify.css'; 
 import store from '../Redux/store';
 
 function App() {
@@ -44,7 +44,7 @@ function App() {
               pauseOnFocusLoss
               draggable
               pauseOnHover
-              theme="dark"  // Use dark theme for the toasts
+              theme="dark"  
             />
           </BrowserRouter>
           <Footer />

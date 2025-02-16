@@ -29,7 +29,7 @@ export default function Showdetails() {
             .then((response) => {
                 const trailerVideo = response.data.results.find(video => video.type === "Trailer");
                 if (trailerVideo) {
-                    setTrailer(trailerVideo.key); // Save the YouTube trailer key
+                    setTrailer(trailerVideo.key); 
                 }
             })
             .catch((error) => {

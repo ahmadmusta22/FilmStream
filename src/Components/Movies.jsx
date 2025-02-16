@@ -26,7 +26,7 @@ export default function Movies() {
  
   useEffect(() => {
     const fetchMovies = async () => {
-      // setShowLoading(true);
+      
       try {
         const response = await axios.get(
           `https://api.themoviedb.org/3/trending/movie/week?api_key=55f4b2316c4b8c8fa71e776cab7e4a69&page=${currentPage}&language=${language}`
@@ -37,9 +37,7 @@ export default function Movies() {
       } catch (error) {
         console.error("Error fetching movies:", error);
       } finally {
-        // setTimeout(() => {
-        //   setShowLoading(false);
-        // }, 300);
+     
       }
     };
 
