@@ -4,7 +4,7 @@ import { ClipLoader } from 'react-spinners'
 
 export default function Loadingscreen() {
   return (
-    <div className="d-flex justify-content-center align-items-center" style={{ height: '24rem' ,  position: 'fixed',
+    <div className="d-flex justify-content-center align-items-center" style={{    position: 'fixed',
         top: 0,
         left: 0,
         width: '100%',
