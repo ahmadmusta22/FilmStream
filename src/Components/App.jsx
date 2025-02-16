@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import Movies from './Movies';
@@ -13,20 +13,17 @@ import Showdetails from './Showdetails';
 import Favorites from './Favorites';
 import Footer from './Footer';
 import { LanguageProvider } from '../Contexts/LanguageContext';
-import { ToastContainer } from 'react-toastify'; 
-import 'react-toastify/dist/ReactToastify.css'; 
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import store from '../redux/store';
-
 
 function App() {
   return (
     <LanguageProvider>
       <Provider store={store}>
         <div className="dark-mode">
-          <BrowserRouter>
+          <Router> {/* ✅ Changed to HashRouter */}
             <Navbar />
-
             <Routes>
               <Route path="/" element={<Movies />} />
               <Route path="/login" element={<Login />} />
@@ -35,7 +32,6 @@ function App() {
               <Route path="/show/:id" element={<Showdetails />} />
               <Route path="*" element={<Notfound />} />
             </Routes>
-
             <ToastContainer
               position="top-right"
               autoClose={3000}
@@ -46,9 +42,9 @@ function App() {
               pauseOnFocusLoss
               draggable
               pauseOnHover
-              theme="dark"  
+              theme="dark"
             />
-          </BrowserRouter>
+          </Router>
           <Footer />
         </div>
       </Provider>
