@@ -15,7 +15,9 @@ import Footer from './Footer';
 import { LanguageProvider } from '../Contexts/LanguageContext';
 import { ToastContainer } from 'react-toastify'; 
 import 'react-toastify/dist/ReactToastify.css'; 
+
 import store from '../redux/store';
+
 
 function App() {
   return (
