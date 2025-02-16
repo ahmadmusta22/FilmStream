@@ -16,13 +16,15 @@ import { LanguageProvider } from '../Contexts/LanguageContext';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import store from '../redux/store';
+import { HashRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
     <LanguageProvider>
       <Provider store={store}>
         <div className="dark-mode">
-          <Router> {/* ✅ Changed to HashRouter */}
+          {/* ✅ Add basename */}
+          <Router basename="/">
             <Navbar />
             <Routes>
               <Route path="/" element={<Movies />} />
@@ -32,18 +34,7 @@ function App() {
               <Route path="/show/:id" element={<Showdetails />} />
               <Route path="*" element={<Notfound />} />
             </Routes>
-            <ToastContainer
-              position="top-right"
-              autoClose={3000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-              theme="dark"
-            />
+            <ToastContainer theme="dark" />
           </Router>
           <Footer />
         </div>
@@ -53,7 +44,6 @@ function App() {
 }
 
 export default App;
-
 
 
 

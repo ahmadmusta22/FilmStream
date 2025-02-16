@@ -2,6 +2,6 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: "/movieapp/", // Change to your repository name
+  base: '/movieapp/', // ✅ Add this line
   plugins: [react()],
 });
