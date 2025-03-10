@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import favoritesReducer from './favoritesSlice';
- // Ensure this path is correct
+
 
 const store = configureStore({
   reducer: {
-    favorites: favoritesReducer, // ✅ Correct
+    favorites: favoritesReducer, 
   },
-  devTools: process.env.NODE_ENV !== 'production', // ✅ Moved outside reducer
+  devTools: process.env.NODE_ENV !== 'production', 
 });
 
 export default store;
