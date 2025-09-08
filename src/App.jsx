@@ -1,17 +1,16 @@
 import React from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom"; // ✅ Use HashRouter
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
-import store from "./redux/store.js";
-// import Navbar from "./Components/Navbar.jsx";
-import Navbar from "./Components/Navbar.jsx";
-import Movies from "./Components/Movies.jsx";
-import Register from "./Components/Register.jsx";
-import Login from "./Components/Signin.jsx";
-import Showdetails from "./Components/Showdetails.jsx";
-import Favorites from "./Components/Favorites.jsx";
-import Footer from "./Components/Footer.jsx";
-import Notfound from "./Notfound.jsx";
-import { LanguageProvider } from "./Contexts/LanguageContext.jsx";
+import store from "./Redux/store";
+import Navbar from "./Components/Navbar";
+import Movies from "./Components/Movies";
+import Register from "./Components/Register";
+import Login from "./Components/Signin";
+import Showdetails from "./Components/Showdetails";
+import Favorites from "./Components/Favorites";
+import Footer from "./Components/Footer";
+import Notfound from "./Notfound";
+import { LanguageProvider } from "./Contexts/LanguageContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import './index.css';
@@ -24,7 +23,7 @@ function App() {
     <LanguageProvider>
       <Provider store={store}>
         <div className="dark-mode">
-          <Router> {/* ✅ Use HashRouter here */}
+          <Router>
             <Navbar />
             <Routes>
               <Route path="/" element={<Movies />} />

@@ -5,7 +5,7 @@ import LoadingScreen from "./LoadingScreen";
 import SearchBar from "./SearchBar"; // Import the new SearchBar component
 import { useLanguage } from "../Contexts/LanguageContext";
 import { useDispatch, useSelector } from "react-redux";
-import { addToFavorites, removeFromFavorites } from "../redux/favoritesSlice";
+import { addToFavorites, removeFromFavorites } from "../Redux/favoritesSlice";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";

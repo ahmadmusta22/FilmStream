@@ -3,15 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://ahmadmusta22.github.io/movieapp",
-
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.1",
@@ -30,7 +26,6 @@
     "redux": "^5.0.1",
     "redux-thunk": "^3.1.0",
     "swiper": "^11.2.4",
-    "v6": "^0.0.0",
     "yup": "^1.6.1"
   },
   "devDependencies": {

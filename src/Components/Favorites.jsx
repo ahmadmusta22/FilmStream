@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { initializeFavorites, removeFromFavorites } from '../redux/favoritesSlice';
+import { initializeFavorites, removeFromFavorites } from '../Redux/favoritesSlice';
 import { FaHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../Contexts/LanguageContext';
